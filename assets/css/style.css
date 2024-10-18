@@ -31,6 +31,12 @@ main{
 
 .card{
     position: relative;
+    transition: transform 5s ease-in-out;
+}
+
+.card:hover{
+    rotate: 5deg;
+    scale: 115%;
 }
 
 .card:hover .pin{

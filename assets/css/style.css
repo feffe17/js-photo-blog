@@ -29,4 +29,19 @@ main{
     background-image: url(../img/cork.png);
 }
 
+.card{
+    position: relative;
+}
+
+.card:hover .pin{
+    display: none;
+}
+
+.pin{
+    position: absolute;
+    top: -1rem;
+}
+
+
+
 /* #endregion main */

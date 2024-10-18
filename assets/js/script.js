@@ -13,7 +13,9 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
                         <div class="pin">
                             <img src="./assets/img/pin.svg" width="80%" height="80%" alt="">
                         </div>
-                        <img src="${urlImg}">
+                        <div class="col-12">
+                            <img src="${urlImg}" width="100%">
+                        </div>
                         <div class="mt-3">"${imgDesc}"</div>
                     </div>
                 </div>`

@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Sometype Mono", monospace;
 }
 
 header{
@@ -21,3 +22,11 @@ header > h1{
 
 
 /* #endregion header */
+
+/* #region main */
+
+main{
+    background-image: url(../img/cork.png);
+}
+
+/* #endregion main */

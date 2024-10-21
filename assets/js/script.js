@@ -5,6 +5,9 @@ let closeBtnEl = document.getElementById("closeBtn");
 let titleEl = document.querySelector(".layer .title");
 let imgEl = document.querySelector(".layer img");
 
+layerEl.style.display = "none"
+bodyEl.style.overflow = "auto"
+
 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
 .then(response => {
@@ -19,17 +22,25 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
                             <img src="./assets/img/pin.svg" width="80%" height="80%" alt="">
                         </div>
                         <div class="col-12">
-                            <img src="${urlImg}" width="100%">
+                            <img src="${urlImg}" width="100%"  class="generatedImg">
                         </div>
-                        <div class="mt-3">"${imgDesc}"</div>
+                        <div class="mt-3 generatedDesc">"${imgDesc}"</div>
                     </div>
                 </div>`
     });
     
+    let openImg = document.querySelectorAll(".generatedImg");
+    openImg.forEach(img => {
+        img.addEventListener("click" , function() {
+            imgEl.src = this.src;
+            let title = document.querySelector(".generatedDesc").textContent
+            titleEl.textContent = title
+            layerEl.style.display = "flex";
+            bodyEl.style.overflow = "hidden"
+        })
+    })
 })
 
-layerEl.style.display = "flex";
-bodyEl.style.overflow = "hidden"
 
 layerEl.addEventListener("click" , close);
 closeBtnEl.addEventListener("click" , close)

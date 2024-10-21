@@ -33,8 +33,8 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
     openImg.forEach(img => {
         img.addEventListener("click" , function() {
             imgEl.src = this.src;
-            let title = document.querySelector(".generatedDesc").textContent
-            titleEl.textContent = title
+            let desc = this.closest('.card').querySelector('.generatedDesc').textContent;
+            titleEl.textContent = desc;
             layerEl.style.display = "flex";
             bodyEl.style.overflow = "hidden"
         })

@@ -1,12 +1,11 @@
 let rowEl = document.getElementById("row");
-let bodyEl = document.querySelector("body");
 let layerEl = document.querySelector(".layer");
 let closeBtnEl = document.getElementById("closeBtn");
 let titleEl = document.querySelector(".layer .title");
 let imgEl = document.querySelector(".layer img");
 
 layerEl.style.display = "none"
-bodyEl.style.overflow = "auto"
+
 
 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
@@ -36,7 +35,7 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
             let desc = this.closest('.card').querySelector('.generatedDesc').textContent;
             titleEl.textContent = desc;
             layerEl.style.display = "flex";
-            bodyEl.style.overflow = "hidden"
+            
         })
     })
 })
@@ -47,5 +46,5 @@ closeBtnEl.addEventListener("click" , close)
 
 function close() {
     layerEl.style.display = "none"
-    bodyEl.style.overflow = "auto"
+    
 }

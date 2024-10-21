@@ -1,4 +1,9 @@
-let rowEl = document.getElementById("row")
+let rowEl = document.getElementById("row");
+let bodyEl = document.querySelector("body");
+let layerEl = document.querySelector(".layer");
+let closeBtnEl = document.getElementById("closeBtn");
+let titleEl = document.querySelector(".layer .title");
+let imgEl = document.querySelector(".layer img");
 
 
 axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
@@ -22,3 +27,14 @@ axios.get('https://jsonplaceholder.typicode.com/photos?_limit=6')
     });
     
 })
+
+layerEl.style.display = "flex";
+bodyEl.style.overflow = "hidden"
+
+layerEl.addEventListener("click" , close);
+closeBtnEl.addEventListener("click" , close)
+
+function close() {
+    layerEl.style.display = "none"
+    bodyEl.style.overflow = "auto"
+}
